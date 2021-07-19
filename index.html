@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulario</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script type="text/javascript">
+        	function validacion(){
+                var name = document.getElementById("name").value;
+                    if( name == null || name.length == 0 || /^\s+$/.test(name) ){
+                        alert("Escribe tu nombre");
+                            return false;
+                            }
+                var name = document.getElementById("name").value;
+                    if( !isNaN(name) ) {
+                        alert("No debes escribir numeros en el nombre");
+                            return false;
+                            }
+            	var valor = document.getElementById("est").value;
+                	if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ){
+                    	alert("La estatura no debe estar vacia");
+                        	return false;
+                            }
+                var valor = document.getElementById("est").value;
+                    if( isNaN(valor) ) {
+                    	alert("La estatura no debe contener letras");
+                        	return false;
+                            }
+                var año = document.getElementById("nacido").value;
+                    if( año == null || año.length == 0 || /^\s+$/.test(año) ){
+                        alert("Introduce tu fecha de nacimiento");
+                            return false;
+                            }
+            }
+            
+    	</script>
+        
+		<form name="contact" method="POST" data-netlify="true" onsubmit="return validacion()">
+        <p>Nombre: <input type="text" name="nombre" size="40" maxlength="50" id="name" placeholder="Nombre apellido"></p>
+        <p>
+            <legend>E-mail:<abbr title="Este campo es obligatorio" aria-label="required"></abbr></legend>
+                <input type="E-mail" name="mail" placeholder="alguien@mail.com">
+                </p>
+        <p>Año de nacimiento: <input type="number" name="nacido" min="1900" max="2023" id="nacido" placeholder="2002"></p>
+        <p>Estatura:<input type="text" id="est" placeholder="1.50"></p>
+
+        <p>
+            <legend>Sexo:<abbr title="Este campo es obligatorio" aria-label="required"></abbr></legend>
+            <input type="radio" required name="hm" id="hom" value="h"><label for="hom">Hombre</label>
+            <input type="radio" required name="hm" id="muj" value="m"><label for="muj">Mujer</label>
+        </p>
+        <p>
+        	<input type="submit" value="Enviar">
+        	<input type="reset" value="Borrar">
+        </p>
+        </form>
+	</body>
+</html>
